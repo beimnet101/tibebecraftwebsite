@@ -4,11 +4,17 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-background-base: #0B0E14;
-  /* Deep dark background like the screenshot */
+  --color-background-base: #080707;
+  /* Deepest Ebony */
+  --color-background-secondary: #0F0D0D;
+  /* Secondary Charcoal */
   --color-foreground-base: #FFFFFF;
-  --color-secondary-text: #9CA3AF;
-  --color-border-base: #1F2937;
+  --color-secondary-text: #A8A29E;
+  /* Warm Stone Gray */
+  --color-border-base: #1C1917;
+  /* Subtle Stone Border */
+  --color-accent-primary: #FF5733;
+  /* Vibrant Orange/Coral */
 
   --radius-xl: 12px;
   --radius-2xl: 16px;
@@ -16,17 +22,24 @@
 }
 
 :root {
-  --background: #0B0E14;
-  --foreground: #FFFFFF;
+  --background: #FFFFFF;
+  --background-secondary: #F8F7F6;
+  --foreground: #080707;
+  --secondary-text: #57534E;
+  --accent: #FF5733;
+  --border-base: #E7E5E4;
 }
 
-/* Explicitly removing the light mode preference since we want it dark by default */
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0B0E14;
-    --foreground: #FFFFFF;
-  }
+.dark {
+  --background: #080707;
+  --background-secondary: #0F0D0D;
+  --foreground: #FFFFFF;
+  --secondary-text: #A8A29E;
+  --accent: #FF5733;
+  --border-base: #1C1917;
 }
+
+/* Standard Body Styles */
 
 body {
   background-color: var(--background);

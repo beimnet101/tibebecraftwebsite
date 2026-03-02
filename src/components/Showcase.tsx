@@ -33,25 +33,25 @@ export const Showcase = () => {
     }, []);
 
     return (
-        <section className="py-24 bg-[#0B0E14] px-6 overflow-hidden">
+        <section className="py-24 bg-[var(--background)] px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div className="lg:w-1/3">
-                        <h2 className="text-3xl font-medium mb-6 text-white tracking-tight">Experience Tibebcraft</h2>
+                        <h2 className="text-3xl font-medium mb-6 text-[var(--foreground)] tracking-tight">Experience Tibebcraft</h2>
                         <div className="space-y-6">
                             {slides.map((slide, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setActiveSlide(index)}
                                     className={`text-left p-6 rounded-2xl border transition-all duration-300 w-full ${activeSlide === index
-                                        ? "bg-[#161B22] border-blue-500/50 shadow-lg"
-                                        : "bg-transparent border-transparent hover:border-gray-800"
+                                        ? "bg-[var(--background-secondary)] border-accent/50 shadow-lg"
+                                        : "bg-transparent border-transparent hover:border-border-base"
                                         }`}
                                 >
-                                    <h3 className={`text-lg font-medium mb-2 ${activeSlide === index ? "text-white" : "text-secondary-text"}`}>
+                                    <h3 className={`text-lg font-medium mb-2 ${activeSlide === index ? "text-[var(--foreground)]" : "text-[var(--secondary-text)]"}`}>
                                         {slide.title}
                                     </h3>
-                                    <p className="text-secondary-text text-sm leading-relaxed">
+                                    <p className="text-[var(--secondary-text)] text-sm leading-relaxed">
                                         {slide.description}
                                     </p>
                                 </button>
@@ -67,21 +67,21 @@ export const Showcase = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}
                                 transition={{ duration: 0.5 }}
-                                className="bg-[#0B0E14] rounded-3xl border border-border-base shadow-2xl overflow-hidden aspect-[4/3] flex flex-col"
+                                className="bg-[var(--background)] rounded-3xl border border-border-base shadow-2xl overflow-hidden aspect-[4/3] flex flex-col"
                             >
                                 {/* Mockup UI based on user's screenshots */}
-                                <div className="flex items-center gap-4 px-6 py-4 border-b border-border-base bg-[#161B22]">
+                                <div className="flex items-center gap-4 px-6 py-4 border-b border-border-base bg-[var(--background-secondary)]">
                                     <div className="flex gap-1.5">
                                         <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50" />
                                         <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
                                         <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
                                     </div>
-                                    <div className="text-xs text-secondary-text font-mono truncate">
+                                    <div className="text-xs text-[var(--secondary-text)] font-mono truncate">
                                         {slides[activeSlide].type === "editor" ? "tibebcraft — Online IDE with Preview" : "tibebcraft — Dashboard"}
                                     </div>
                                 </div>
 
-                                <div className="flex-1 bg-[#0D1117] relative flex items-center justify-center overflow-hidden">
+                                <div className="flex-1 bg-[var(--background)] relative flex items-center justify-center overflow-hidden">
                                     {/* 
                                       TIYP: To use your actual videos or screenshots:
                                       1. Place them in /public/showcase/
@@ -99,7 +99,7 @@ export const Showcase = () => {
                                                 ref={(el) => {
                                                     if (el) el.playbackRate = 2.0;
                                                 }}
-                                                src="/showcase/promptimplementaion.mov"
+                                                src="/showcase/feature-prompt.mov"
                                                 autoPlay
                                                 loop
                                                 muted
@@ -113,7 +113,7 @@ export const Showcase = () => {
                                         <div className="w-full h-full relative bg-black">
                                             <video
                                                 ref={(el) => { if (el) el.playbackRate = 2.0; }}
-                                                src="/showcase/Screen Recording 2026-03-02 at 6.50.17 PM.mov"
+                                                src="/showcase/feature-editor.mov"
                                                 autoPlay loop muted playsInline
                                                 className="w-full h-full object-contain"
                                             />
@@ -123,7 +123,7 @@ export const Showcase = () => {
 
                                 {/* Glow effect for each slide */}
                                 {activeSlide === 1 && (
-                                    <div className="absolute inset-0 bg-blue-500/5 blur-3xl -z-10" />
+                                    <div className="absolute inset-0 bg-accent/5 blur-3xl -z-10" />
                                 )}
                             </motion.div>
                         </AnimatePresence>

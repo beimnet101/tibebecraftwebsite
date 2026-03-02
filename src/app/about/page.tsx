@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[#0B0E14] text-white selection:bg-white selection:text-black">
+        <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-accent selection:text-white">
             <Navbar />
             <div className="pt-40 pb-20 px-6 max-w-3xl mx-auto">
-                <h1 className="text-6xl font-medium mb-12">Building the future of software construction.</h1>
-                <div className="space-y-8 text-xl text-secondary-text leading-relaxed">
+                <h1 className="text-6xl font-medium mb-12 text-[var(--foreground)]">Building the future of software construction.</h1>
+                <div className="space-y-8 text-xl text-[var(--secondary-text)] leading-relaxed">
                     <p>
                         Tibebcraft is an AI-first code editor, built to make you 10x more productive.
                         We believe that the future of coding lies in the seamless collaboration between human creativity and artificial intelligence.

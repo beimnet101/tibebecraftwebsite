@@ -28,7 +28,7 @@ const footerLinks = [
 
 export const Footer = () => {
     return (
-        <footer className="bg-[#0B0E14] border-t border-border-base py-20 px-6">
+        <footer className="bg-[var(--background-secondary)] border-t border-border-base py-20 px-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
                     <div className="col-span-2 md:col-span-1">
@@ -40,22 +40,22 @@ export const Footer = () => {
                                     className="w-7 h-7 object-contain"
                                 />
                             </div>
-                            <span className="font-semibold text-2xl tracking-tight text-white">Tibebcraft</span>
+                            <span className="font-semibold text-2xl tracking-tight text-[var(--foreground)]">Tibebcraft</span>
                         </Link>
-                        <p className="text-secondary-text text-sm leading-relaxed max-w-xs">
+                        <p className="text-[var(--secondary-text)] text-sm leading-relaxed max-w-xs">
                             Tibebcraft is for everyone. Fast, powerful, and completely free.
                         </p>
                     </div>
 
                     {footerLinks.map((section, index) => (
                         <div key={index}>
-                            <h4 className="font-medium text-sm mb-6 uppercase tracking-wider text-white">
+                            <h4 className="font-medium text-sm mb-6 uppercase tracking-wider text-[var(--foreground)]">
                                 {section.title === "Product" ? "Free" : section.title}
                             </h4>
                             <ul className="space-y-4">
                                 {section.links.map((link, lIndex) => (
                                     <li key={lIndex}>
-                                        <Link href={link.href} className="text-secondary-text text-sm hover:text-white transition-colors ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                                        <Link href={link.href} className="text-[var(--secondary-text)] text-sm hover:text-[var(--foreground)] transition-colors ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
                                             {link.name}
                                         </Link>
                                     </li>

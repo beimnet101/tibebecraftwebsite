@@ -4,7 +4,7 @@ import { Pricing } from "@/components/Pricing";
 
 export default function PricingPage() {
     return (
-        <main className="min-h-screen bg-[#0B0E14] text-white selection:bg-white selection:text-black">
+        <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] selection:bg-accent selection:text-white">
             <Navbar />
             <div className="pt-20">
                 <Pricing />

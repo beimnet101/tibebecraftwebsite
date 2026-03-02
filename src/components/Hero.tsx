@@ -6,17 +6,17 @@ import Link from "next/link";
 
 export const Hero = () => {
     return (
-        <section className="pt-32 pb-20 px-6">
+        <section className="pt-32 pb-20 px-6 bg-[var(--background)]">
             <div className="max-w-7xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-medium tracking-tighter mb-6 bg-clip-text text-white">
+                    <h1 className="text-5xl md:text-7xl font-medium tracking-tighter mb-6 bg-clip-text text-[var(--foreground)]">
                         The AI Code Editor
                     </h1>
-                    <p className="text-xl md:text-2xl text-secondary-text max-w-2xl mx-auto mb-10 leading-relaxed">
+                    <p className="text-xl md:text-2xl text-[var(--secondary-text)] max-w-2xl mx-auto mb-10 leading-relaxed">
                         Built to make you 10x more productive, Tibebcraft is the best way to code with AI.
                     </p>
 
@@ -24,7 +24,7 @@ export const Hero = () => {
                         <Link
                             href="https://tibebcraft.vercel.app/"
                             target="_blank"
-                            className="bg-white text-black px-10 py-5 rounded-full text-lg font-medium hover:bg-white/90 transition-all flex items-center gap-2 group shadow-xl shadow-white/10"
+                            className="bg-[var(--foreground)] text-[var(--background)] px-10 py-5 rounded-full text-lg font-medium hover:opacity-90 transition-all flex items-center gap-2 group shadow-xl shadow-black/5"
                         >
                             Try Tibebcraft Online <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
@@ -36,7 +36,7 @@ export const Hero = () => {
                     transition={{ delay: 0.3, duration: 0.8 }}
                     className="relative max-w-6xl mx-auto mt-20"
                 >
-                    <div className="bg-[#0B0E14] rounded-3xl overflow-hidden shadow-2xl border border-border-base aspect-video flex flex-col relative group">
+                    <div className="bg-[var(--background)] rounded-3xl overflow-hidden shadow-2xl border border-[var(--border-base)] aspect-video flex flex-col relative group">
                         {/* 
               PRIMARY LANDING MEDIA:
               To use your 'landing.png' or 'landing.mov', ensure it is in the 'public' folder.
@@ -65,7 +65,7 @@ export const Hero = () => {
                     </div>
 
                     {/* Intense glow effect */}
-                    <div className="absolute -inset-10 bg-blue-500/10 blur-3xl -z-10 opacity-30" />
+                    <div className="absolute -inset-10 bg-accent/20 blur-3xl -z-10 opacity-30" />
                 </motion.div>
             </div>
         </section>
